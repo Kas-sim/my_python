@@ -14,16 +14,19 @@ moves = ["Rock", "Paper", "Scissor"]
 victory = 0
 lost = 0
 tie = 0
+played = 0
 
 while True:
     user_input = (input("Type: Rock/Paper/Scissor or Q to quit\n")).capitalize()
     computer = random.choice(moves)
+
 
     if user_input == "Q":
         print()
         print(f"You Won {victory} times!")  
         print(f"You Lost {lost} times!")
         print(f"Tie {tie} times!")
+        print(f"You played {played} times!")
         quit()
 
     print("")
@@ -49,4 +52,5 @@ while True:
         lost += 1
     #print(f"You Won {victory} times and Lost {lost} times \n")
     
+    played += 1
     
