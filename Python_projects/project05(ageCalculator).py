@@ -1,36 +1,41 @@
 print("\nAge Calculator - Know How many days you have lived!\n")
 
-name = input("Enter your Name: ")
-birthDate = int(input("Enter Birth Date: "))
-birthMonth = int(input("Enter Birth Month: "))
-birthYear = int(input("Enter Birth Year: "))
+while True: 
+    check = input("Do you want to calculate your Age? (0 or n to Exit) ")
+    if check == "0" or "n" or "N":
+        break
 
-print("\nEnter D/M/Y from which you want to calculate {name}'s Age: \n")
-fromDate = int(input("Date: "))
-fromMonth = int(input("Month: "))
-fromYear = int(input("Year: "))
+    name = input("Enter your Name: ")
+    birthDate = int(input("Enter Birth Date: "))
+    birthMonth = int(input("Enter Birth Month: "))
+    birthYear = int(input("Enter Birth Year: "))
 
-year = fromYear - birthYear
+    print("\nEnter D/M/Y from which you want to calculate {name}'s Age: \n")
+    fromDate = int(input("Date: "))
+    fromMonth = int(input("Month: "))
+    fromYear = int(input("Year: "))
 
-# Month
-if birthMonth > fromMonth:
-    month = (12-birthMonth) + fromMonth
-    year-=1
-elif birthMonth < fromMonth:
-    month = fromMonth - birthMonth
-else :
-    month = 0
+    year = fromYear - birthYear
 
-# Date
-if birthDate > fromDate:
-    day = (30-birthDate) + fromDate
-    month-=1
-elif birthDate < fromDate:
-    day = fromDate - birthDate
-else :
-    day = 0
+    # Month
+    if birthMonth > fromMonth:
+        month = (12-birthMonth) + fromMonth
+        year-=1
+    elif birthMonth < fromMonth:
+        month = fromMonth - birthMonth
+    else :
+        month = 0
 
-daysLived = (365*year) + (30*month) + day
+    # Date
+    if birthDate > fromDate:
+        day = (30-birthDate) + fromDate
+        month-=1
+    elif birthDate < fromDate:
+        day = fromDate - birthDate
+    else :
+        day = 0
 
-print(f"{name} have lived {year} years, {month} months and {day} days")
-print(f"{name} have lived {daysLived} days")
+    daysLived = (365*year) + (30*month) + day
+
+    print(f"{name} have lived {year} years, {month} months and {day} days")
+    print(f"{name} have lived {daysLived} days\n")
