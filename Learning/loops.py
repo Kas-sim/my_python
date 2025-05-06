@@ -26,13 +26,13 @@ for i in range(100):
         continue 
     print(i) """
 
-""" Even ODD Detector and List
+"""Even ODD Detector and List
 while True:
     check = input("Play or Quit(0): ")
     if check == "0":
         break
     else: 
-        n = int(input("Enter a digit: "))
+        n = int(input("\nEnter a digit: "))
         if n % 2 == 0:
             print("Heres List of Even numbers: ")
             for i in range(0, n+1, 2): 
@@ -44,3 +44,11 @@ while True:
                 if i % 2 != 0:
                     continue
 """
+
+""" why this shows error
+fruits = ['apples', 'banana', 'strawberry', 'mango']
+for f in range(fruits):
+    print(f) 
+"""
+
+
