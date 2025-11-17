@@ -35,9 +35,7 @@ def login():
             if f"{username} - {hashedPass}" in line:
                 print("Login Successful!\n")
                 return
-            else:
-                print("Login Failed!\n")
-                return
+        print("Login Failed!\n")
 
 
 
@@ -65,4 +63,5 @@ login
     checking from accountData.txt
     check if username + hashedPass exists
     login failed or login successful
+
 '''
