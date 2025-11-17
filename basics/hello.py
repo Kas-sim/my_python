@@ -1,3 +1,4 @@
+filepath = "accountData.txt"
 def hashedInput():
     username = input("Enter Username: ")
     password = input("Enter Password: ")
@@ -14,13 +15,13 @@ def createAccount():
     print("\n--- Signup ---")
     username, hashedPass = hashedInput()
 
-    with open("accountData.txt", "r") as file:
+    with open(filepath, "r") as file:
         content = file.read()
         if username in content:
             print(f"{username} is already registered!\n")
             createAccount()
         else:
-            with open("accountData.txt", "a") as file:
+            with open(filepath, "a") as file:
                 print(f"Congratulations, {username}\nAccount created successfully!\n")
                 file.write(f"{username} - {hashedPass}\n")
 
@@ -28,14 +29,16 @@ def login():
     print("\n--- Login ---")
     username, hashedPass = hashedInput()
 
-    with open("accountData.txt", "r") as file:
-        content = file.read()
-        if username and hashedPass in content:
-            print("Login Successful!\n")
-            return
-        else:
-            print("Login Failed!\n")
-            return
+    with open(filepath, "r") as file:
+        
+        for line in file:
+            if f"{username} - {hashedPass}" in line:
+                print("Login Successful!\n")
+                return
+            else:
+                print("Login Failed!\n")
+                return
+
 
 
 while True:
@@ -54,12 +57,12 @@ Menu with (exit, signup, login)
 
 signup 
     create account
-    only if user is not registered already!
+    read from accountData - only if user is not registered already!
+    store the hash of the password
     writing in accountData.txt
 
 login
-    check username and password exist 
-    login failed or login successful
     checking from accountData.txt
-
+    check if username + hashedPass exists
+    login failed or login successful
 '''
