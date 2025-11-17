@@ -59,9 +59,19 @@ def updateEmployee():
                 return
     print(f"Employee not found!")
 
+def addEmployee():
+    
+    
+    
+    
+
+
+
+
+
 
 while True:
-    x = int(input("\n0. Exit \n1. Search for Employee \n2. Update Employee  \n3. Add Employee \n4. Print Employees \n\nEnter operation: "))
+    x = int(input("\n0. Exit \n1. Search for Employee \n2. Update Employee  \n3. Add Employee \n4. Remove Employee \n5. Print Employees \n\nEnter operation: "))
 
     if x == 0:
         break
@@ -72,7 +82,10 @@ while True:
     elif x == 3:
         addEmployee()
     elif x == 4:
+        removeEmployee()
+    elif x == 5:
         printEmployees()
+        
     else:
         continue
 
