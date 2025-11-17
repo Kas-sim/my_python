@@ -6,12 +6,13 @@ def createAccount():
 
     for x in password:
         y = ord(x)
-        z = chr(y+9)
+        z = chr(y+10)
         hashedPass += z
 
     with open("accountData.txt", "r") as file:
-        line = file.read()
-        if hashedPass in line:
+        content = file.read()
+        if hashedPass in content:
+            print("this password already exists")
             return
         else:
             with open("accountData.txt", "a") as file:
@@ -20,22 +21,28 @@ def createAccount():
 def login():
     usernme = input("Enter username: ")
     password = input("Enter Password: ")
+
     hashedPass = ""
 
+    for x in password:
+        y = ord(x)
+        z = chr(y+10)
+        hashedPass += z
+
     with open("accountData.txt", "r") as file:
-        line = file.read()
-        if hashedPass in line:
+        content = file.read()
+        if hashedPass in content:
             print("Login Successful!")
 
 
 
 while True:
-    x = input(" Enter funciton you want (-1 to quit): ")    
-    if x == "0":
+    x = input("Enter operatin you want to perform (0 to quit): ")    
+    if x == "1":
         createAccount()
-    elif x == "1":
+    elif x == "2":
         login()
-    elif x == "-1":
+    elif x == "0":
         break
     else:
-        break
+        continue
