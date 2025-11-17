@@ -1,53 +1,41 @@
-'''name = input("Enter your name: ")
-charName = list(name)
-
-hashed = "" 
-
-for x in charName:
-    y = ord(x)
-    z = chr(y+3)
-#    print(f"{x} -> {y} -> {z}")
-    hashed = hashed + "".join(z)
-
-print(f"Original name: {name} - Hashed name: {hashed}")
-'''
-'''
-while True:
+def createAccount():
+    username = input("Enter username: ")
+    password = input("Enter Password: ")
     
-    name = input("Enter your name - (0 to quit): ")
-    if name == "0":
-        break
+    hashedPass = ""
 
-    hashed = "" 
-
-    for x in name:
+    for x in password:
         y = ord(x)
-        z = chr(y+3)
-        hashed +=z
+        z = chr(y+9)
+        hashedPass += z
 
-    print(f"Original name: {name} - Hashed name: {hashed}")
-
-    full = (f"{name} -> {hashed}\n")
-    print(full)
-
-    with open("myFile.txt", "r") as file:
+    with open("accountData.txt", "r") as file:
         line = file.read()
-
-        if name in line:
-            print(f"{name} is already hashed!")
-            break
+        if hashedPass in line:
+            return
         else:
-            with open("myFile.txt", "a") as file:
-                file.write(f"{name} -> {hashed}\n")
+            with open("accountData.txt", "a") as file:
+                file.write(f"{username} - {hashedPass}\n")
 
-    print("Writen in myFile.txt successfully!")
-'''
+def login():
+    usernme = input("Enter username: ")
+    password = input("Enter Password: ")
+    hashedPass = ""
 
-'''
-1. create account
-    password already exist!
-2. login account
-3. quit applicaiton
-store only hash
-'''
+    with open("accountData.txt", "r") as file:
+        line = file.read()
+        if hashedPass in line:
+            print("Login Successful!")
 
+
+
+while True:
+    x = input(" Enter funciton you want (-1 to quit): ")    
+    if x == "0":
+        createAccount()
+    elif x == "1":
+        login()
+    elif x == "-1":
+        break
+    else:
+        break
