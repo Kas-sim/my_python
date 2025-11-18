@@ -14,7 +14,6 @@ def saveEmployees():
 
 def printEmployees():
     empData = loadEmployees()
-
     size = len(empData)
 
     print(f"\n total {size} are employed")
@@ -64,9 +63,11 @@ def updateEmployee():
 
 def addEmployee():
     empData = loadEmployees()  
-    numEmp = len(empData)
+    numEmp = 0
+    for x in empData:
+        numEmp = x["id"] + 1
 
-    entry = {"id": (numEmp), "name": "", "role": "", "salary": 0}
+    entry = {"id": numEmp, "name": "", "role": "", "salary": 0}
     
     name = input(f"Enter name of new Employee {numEmp}: ")
     entry["name"] = name
@@ -82,9 +83,22 @@ def addEmployee():
     with open(filepath, "w") as file:
         file.write(json.dumps(empData, indent=2))
     
+def removeEmployee():
+    empData = loadEmployees()
 
+    inp = int(input("Enter Id of Employee, you want to remove: "))
 
+    for x in empData:
+        if inp == x["id"]:
+            print(f"Removing {x["name"]} with employee id {x["id"]}") 
+            empData.remove(x)
 
+            with open(filepath, "w") as file:
+                file.write(json.dumps(empData, indent=2))
+            return
+    print("Employee not found!\n")
+
+    
 
 while True:
     x = int(input("\n0. Exit \n1. Search for Employee \n2. Update Employee  \n3. Add Employee \n4. Remove Employee \n5. Print Employees \n\nEnter operation: "))
@@ -101,9 +115,9 @@ while True:
         removeEmployee()
     elif x == 5:
         printEmployees()
-        
     else:
         continue
+
 
 
 

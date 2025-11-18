@@ -120,12 +120,6 @@
     "salary": 55000
   },
   {
-    "id": 20,
-    "name": "azeem",
-    "role": "Finance Officer",
-    "salary": 60000
-  },
-  {
     "id": 21,
     "name": "mazhar",
     "role": "Content Writer",
@@ -163,6 +157,12 @@
   },
   {
     "id": 27,
+    "name": "Azeem",
+    "role": "Finance manager",
+    "salary": 62700.0
+  },
+  {
+    "id": 28,
     "name": "Haseeb",
     "role": "Gamer",
     "salary": 69000.0
