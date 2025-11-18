@@ -11,7 +11,6 @@ def saveEmployees():
     with open("updEmployee.json", "w") as file:
         file.write(json.dumps(empData, indent=2))
 
-
 def printEmployees():
     empData = loadEmployees()
     size = len(empData)
@@ -66,6 +65,8 @@ def addEmployee():
     numEmp = 0
     for x in empData:
         numEmp = x["id"] + 1
+        if numEmp == x["id"]:
+            numEmp+1
 
     entry = {"id": numEmp, "name": "", "role": "", "salary": 0}
     

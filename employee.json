@@ -166,5 +166,11 @@
     "name": "Haseeb",
     "role": "Gamer",
     "salary": 69000.0
+  },
+  {
+    "id": 29,
+    "name": "Akbar",
+    "role": "Esports Player",
+    "salary": 100000
   }
 ]
