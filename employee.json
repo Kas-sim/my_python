@@ -172,5 +172,23 @@
     "name": "Akbar",
     "role": "Esports Player",
     "salary": 100000
+  },
+  {
+    "id": 30,
+    "name": "Tahir",
+    "role": "Waiter",
+    "salary": 30400.0
+  },
+  {
+    "id": 31,
+    "name": "Abdullah",
+    "role": "Doctor",
+    "salary": 36000.0
+  },
+  {
+    "id": 32,
+    "name": "Abdul Rab",
+    "role": "Mathematician",
+    "salary": 35130.0
   }
 ]
