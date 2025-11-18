@@ -14,7 +14,10 @@ def saveEmployees():
 
 def printEmployees():
     empData = loadEmployees()
-    print("\n")
+
+    size = len(empData)
+
+    print(f"\n total {size} are employed")
     for x in empData:
         print(f"{x["id"]}. {x["name"]} -> {x["role"]}")
     print("\n")
@@ -60,12 +63,25 @@ def updateEmployee():
     print(f"Employee not found!")
 
 def addEmployee():
-    
-    
-    
-    
+    empData = loadEmployees()  
+    numEmp = len(empData)
 
+    entry = {"id": (numEmp), "name": "", "role": "", "salary": 0}
+    
+    name = input(f"Enter name of new Employee {numEmp}: ")
+    entry["name"] = name
+    role = input(f"Enter role of new Employee {entry["name"]}: ")
+    entry["role"] = role
+    salary = float(input(f"Enter salary of new Employee {numEmp}: "))
+    entry["salary"] = salary
 
+    print(entry)
+    
+    empData.append(entry)
+    
+    with open(filepath, "w") as file:
+        file.write(json.dumps(empData, indent=2))
+    
 
 
 
@@ -88,7 +104,6 @@ while True:
         
     else:
         continue
-
 
 
 

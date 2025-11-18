@@ -148,5 +148,11 @@
     "name": "zubair",
     "role": "Graphic Designer",
     "salary": 42000
+  },
+  {
+    "id": 25,
+    "name": "taraz",
+    "role": "software maintainer",
+    "salary": 54000.0
   }
 ]
