@@ -3,7 +3,7 @@
     "id": 0,
     "name": "qasim",
     "role": "IT Professional",
-    "salary": 99999999
+    "salary": 999999
   },
   {
     "id": 1,
@@ -120,12 +120,6 @@
     "salary": 55000
   },
   {
-    "id": 20,
-    "name": "azeem",
-    "role": "Finance Officer",
-    "salary": 60000
-  },
-  {
     "id": 21,
     "name": "mazhar",
     "role": "Content Writer",
@@ -151,8 +145,50 @@
   },
   {
     "id": 25,
-    "name": "taraz",
-    "role": "software maintainer",
-    "salary": 54000.0
+    "name": "habib",
+    "role": "Calculus Professor",
+    "salary": 30000.0
+  },
+  {
+    "id": 26,
+    "name": "Taraz",
+    "role": "Software Maintainer",
+    "salary": 41300.0
+  },
+  {
+    "id": 27,
+    "name": "Azeem",
+    "role": "Finance manager",
+    "salary": 62700.0
+  },
+  {
+    "id": 28,
+    "name": "Haseeb",
+    "role": "Gamer",
+    "salary": 69000.0
+  },
+  {
+    "id": 29,
+    "name": "Akbar",
+    "role": "Esports Player",
+    "salary": 100000
+  },
+  {
+    "id": 30,
+    "name": "Tahir",
+    "role": "Waiter",
+    "salary": 30400.0
+  },
+  {
+    "id": 31,
+    "name": "Abdullah",
+    "role": "Doctor",
+    "salary": 36000.0
+  },
+  {
+    "id": 32,
+    "name": "Abdul Rab",
+    "role": "Mathematician",
+    "salary": 35130.0
   }
 ]

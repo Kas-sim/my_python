@@ -1,0 +1,27 @@
+import pandas as pd
+
+df = pd.read_json('updEmployee.json')
+# print(df)
+
+# print(df.head())
+# print(f"\n{df.tail()}")
+# print(df.info())
+
+# print(f"{df[['name', 'salary']]}")
+
+# print(df.loc[6])
+# print(df.describe())
+
+print(f"\nAt our company, Average Salary is: { df['salary'].mean() }")
+print(f"\nAt our company, Highhest Salary is: { df['salary'].max() }")
+print(f"\nAt our company, Minimum Salary is: { df['salary'].min() }")
+
+sorted_salary = df['salary'].sort_values(ascending=False)
+print( df.iloc[16] )
+print(sorted_salary)
+
+# print( df.loc[0:8, ['name', 'salary']])
+
+# print(df[df['salary'] > 220000])
+
+# print(df[ (df['salary'] > 100000) & (df['name'] != 'qasim') ])
