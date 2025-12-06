@@ -1,0 +1,194 @@
+[
+  {
+    "id": 0,
+    "name": "qasim",
+    "role": "IT Professional",
+    "salary": 99999999
+  },
+  {
+    "id": 1,
+    "name": "sufiyan",
+    "role": "Computer Scientist",
+    "salary": 140000
+  },
+  {
+    "id": 2,
+    "name": "rashid",
+    "role": "Finance Manager",
+    "salary": 12500
+  },
+  {
+    "id": 3,
+    "name": "ali",
+    "role": "Network Engineer",
+    "salary": 85000
+  },
+  {
+    "id": 4,
+    "name": "hamza",
+    "role": "UI/UX Designer",
+    "salary": 72000
+  },
+  {
+    "id": 5,
+    "name": "farhan",
+    "role": "Product Manager",
+    "salary": 110000
+  },
+  {
+    "id": 6,
+    "name": "saad",
+    "role": "Backend Developer",
+    "salary": 105000
+  },
+  {
+    "id": 7,
+    "name": "hassan",
+    "role": "Frontend Developer",
+    "salary": 95000
+  },
+  {
+    "id": 8,
+    "name": "junaid",
+    "role": "Data Analyst",
+    "salary": 78000
+  },
+  {
+    "id": 9,
+    "name": "bilal",
+    "role": "Marketing Manager",
+    "salary": 65000
+  },
+  {
+    "id": 10,
+    "name": "fahad",
+    "role": "HR Executive",
+    "salary": 50000
+  },
+  {
+    "id": 11,
+    "name": "omer",
+    "role": "Operations Supervisor",
+    "salary": 48000
+  },
+  {
+    "id": 12,
+    "name": "ahmed",
+    "role": "QA Engineer",
+    "salary": 70000
+  },
+  {
+    "id": 13,
+    "name": "kashif",
+    "role": "System Administrator",
+    "salary": 90000
+  },
+  {
+    "id": 14,
+    "name": "imran",
+    "role": "Business Analyst",
+    "salary": 88000
+  },
+  {
+    "id": 15,
+    "name": "waleed",
+    "role": "Cloud Architect",
+    "salary": 130000
+  },
+  {
+    "id": 16,
+    "name": "shahid",
+    "role": "DevOps Engineer",
+    "salary": 118000
+  },
+  {
+    "id": 17,
+    "name": "nadeem",
+    "role": "Cybersecurity Specialist",
+    "salary": 125000
+  },
+  {
+    "id": 18,
+    "name": "tahir",
+    "role": "Support Technician",
+    "salary": 40000
+  },
+  {
+    "id": 19,
+    "name": "ismail",
+    "role": "Project Coordinator",
+    "salary": 55000
+  },
+  {
+    "id": 21,
+    "name": "mazhar",
+    "role": "Content Writer",
+    "salary": 35000
+  },
+  {
+    "id": 22,
+    "name": "yasir",
+    "role": "AI Researcher",
+    "salary": 160000
+  },
+  {
+    "id": 23,
+    "name": "usman",
+    "role": "Mobile App Developer",
+    "salary": 98000
+  },
+  {
+    "id": 24,
+    "name": "zubair",
+    "role": "Graphic Designer",
+    "salary": 42000
+  },
+  {
+    "id": 25,
+    "name": "habib",
+    "role": "Calculus Professor",
+    "salary": 30000.0
+  },
+  {
+    "id": 26,
+    "name": "Taraz",
+    "role": "Software Maintainer",
+    "salary": 41300.0
+  },
+  {
+    "id": 27,
+    "name": "Azeem",
+    "role": "Finance manager",
+    "salary": 62700.0
+  },
+  {
+    "id": 28,
+    "name": "Haseeb",
+    "role": "Gamer",
+    "salary": 69000.0
+  },
+  {
+    "id": 29,
+    "name": "Akbar",
+    "role": "Esports Player",
+    "salary": 100000
+  },
+  {
+    "id": 30,
+    "name": "Tahir",
+    "role": "Waiter",
+    "salary": 30400.0
+  },
+  {
+    "id": 31,
+    "name": "Abdullah",
+    "role": "Doctor",
+    "salary": 36000.0
+  },
+  {
+    "id": 32,
+    "name": "Abdul Rab",
+    "role": "Mathematician",
+    "salary": 35130.0
+  }
+]
