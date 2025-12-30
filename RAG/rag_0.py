@@ -5,6 +5,7 @@ from llama_index.vector_stores.chroma import ChromaVectorStore
 import chromadb
 from chromadb.config import Settings
 from llama_index.core import VectorStoreIndex
+from llama_index.llms.ollama import Ollama
 
 documents = SimpleDirectoryReader(
     "data/",
@@ -47,6 +48,17 @@ index = VectorStoreIndex(
     embed_model=embed_model
 )
 
+llm = Ollama(model="mistral-rag", temperature=0.1)
+
 query_engine = index.as_query_engine(
-    similarity_top_K=5
+    llm=llm,
+    similarity_top_K=3
 )
+
+response = query_engine.query(
+    "What does this documents say about War?"
+)
+print(response)
+
+for source in response.source_nodes:
+    print(source.metadata["source"])
