@@ -1,11 +1,18 @@
-import chromadb
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from chromadb.utils import embedding_functions
+from llama_index.vector_stores.chroma import ChromaVectorStore
+import chromadb
+from chromadb.config import Settings
 from llama_index.core import VectorStoreIndex
 
-documents = SimpleDirectoryReader("data/").load_data()
+documents = SimpleDirectoryReader(
+    "data/",
+    file_metadata=lambda x: {
+        "source": x,
+        "type": "local_file"
+    }
+).load_data()
 
 node_parser = SentenceSplitter(
     chunk_size = 512,
@@ -17,39 +24,29 @@ nodes = node_parser.get_nodes_from_documents(
     show_progress=True
 )
 
-
-
-
-texts = [node.text for node in nodes]
-print(f"Total chunks created: {len(texts)}")
-
-
-
-embeddings = model.encode(
-    texts,
-    batch_size=32,
-    show_progress_bar=True
-)
-print("Embeddings Shape: ", embeddings.shape)
-
-similarities = model.similarity(embeddings, embeddings)
-print(similarities)
-
-client = chromadb.Client()
-
-embeddings = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="all-MiniLM-L6-v2"
+embed_model = HuggingFaceEmbedding(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-collection = client.create_collection(
-    name="rag_docs",
-    embedding_function=embeddings
+chromadb_path = "./chromadb"
+db = chromadb.Client(
+    Settings(
+        persist_directory=chromadb_path,
+        anonymized_telemetry=False
+    )
+)
+collection = db.get_or_create_collection("rag_docs")
+
+vector_store = ChromaVectorStore(
+    chroma_collection=collection
 )
 
 index = VectorStoreIndex(
     nodes,
-    vector_store=collection,
-    embed_model=embeddings
+    vector_store=vector_store,
+    embed_model=embed_model
 )
 
-
+query_engine = index.as_query_engine(
+    similarity_top_K=5
+)
