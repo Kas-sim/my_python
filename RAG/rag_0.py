@@ -1,6 +1,9 @@
+import chromadb
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
-from sentence_transformers import SentenceTransformer
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from chromadb.utils import embedding_functions
+from llama_index.core import VectorStoreIndex
 
 documents = SimpleDirectoryReader("data/").load_data()
 
@@ -14,10 +17,13 @@ nodes = node_parser.get_nodes_from_documents(
     show_progress=True
 )
 
+
+
+
 texts = [node.text for node in nodes]
 print(f"Total chunks created: {len(texts)}")
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+
 
 embeddings = model.encode(
     texts,
@@ -26,7 +32,24 @@ embeddings = model.encode(
 )
 print("Embeddings Shape: ", embeddings.shape)
 
-
 similarities = model.similarity(embeddings, embeddings)
 print(similarities)
+
+client = chromadb.Client()
+
+embeddings = embedding_functions.SentenceTransformerEmbeddingFunction(
+    model_name="all-MiniLM-L6-v2"
+)
+
+collection = client.create_collection(
+    name="rag_docs",
+    embedding_function=embeddings
+)
+
+index = VectorStoreIndex(
+    nodes,
+    vector_store=collection,
+    embed_model=embeddings
+)
+
 
