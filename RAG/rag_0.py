@@ -16,8 +16,8 @@ documents = SimpleDirectoryReader(
 ).load_data()
 
 node_parser = SentenceSplitter(
-    chunk_size = 256,
-    chunk_overlap = 32
+    chunk_size=256,
+    chunk_overlap=32
 )
 
 nodes = node_parser.get_nodes_from_documents(
@@ -48,15 +48,21 @@ index = VectorStoreIndex(
     embed_model=embed_model
 )
 
-llm = Ollama(model="mistral-rag", temperature=0.1)
+llm = Ollama(
+    model="mistral:7b-instruct-q4_K_M",
+    temperature=0.1,
+    num_ctx=4096,
+    request_timeout=120.0
+)
 
 query_engine = index.as_query_engine(
     llm=llm,
-    similarity_top_k=3
+    similarity_top_k=3,
+    response_mode="compact"
 )
 
 response = query_engine.query(
-    "What does this document say about War?"
+    "Summarize this whole document"
 )
 print(response)
 
