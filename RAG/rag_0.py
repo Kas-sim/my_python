@@ -16,8 +16,8 @@ documents = SimpleDirectoryReader(
 ).load_data()
 
 node_parser = SentenceSplitter(
-    chunk_size = 512,
-    chunk_overlap = 64
+    chunk_size = 256,
+    chunk_overlap = 32
 )
 
 nodes = node_parser.get_nodes_from_documents(
@@ -52,11 +52,11 @@ llm = Ollama(model="mistral-rag", temperature=0.1)
 
 query_engine = index.as_query_engine(
     llm=llm,
-    similarity_top_K=3
+    similarity_top_k=3
 )
 
 response = query_engine.query(
-    "What does this documents say about War?"
+    "What does this document say about War?"
 )
 print(response)
 
